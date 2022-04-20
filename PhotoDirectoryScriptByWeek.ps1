@@ -17,7 +17,7 @@ read-host  "Appuyez sur n'importe ENTER pour lancer le script";
 $moisA = ("Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
 $NbJA = (31,$nbFev,31,30,31,30,31,31,30,31,30,31);
 mkdir "$annee";
-for ($j = 0; $j -lt 11; $j++) {
+for ($j = 0; $j -le 11; $j++) {
   [int]$nbM = $j; 
   $mois = $moisA[$nbM];
   $moisS = $moisA[$nbM+1];
