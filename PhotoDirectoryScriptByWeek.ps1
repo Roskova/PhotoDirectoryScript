@@ -45,6 +45,6 @@ for ($j = 0; $j -le 11; $j++) {
       }
       $finS += 7;
       $debutS +=7;
-    }
+  }
 }
 read-host "Creation terminer";
