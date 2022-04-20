@@ -14,7 +14,7 @@ $debutSA = (2,6,6,3,1,5,3,7,4,2,6,4);
 $nbSA = (5,4,4,4,5,4,5,4,4,5,4,4);
 # Nombre de jour en février        
 $nbFev = 28;
-read-host  "Appuyez sur n'importe ENTER pour lancer le script";
+read-host  "Appuyez sur ENTER pour lancer le script";
 $moisA = ("Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
 $NbJA = (31,$nbFev,31,30,31,30,31,31,30,31,30,31);
 mkdir "$annee";
