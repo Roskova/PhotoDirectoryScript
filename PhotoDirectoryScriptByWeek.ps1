@@ -6,11 +6,12 @@ Write-Host "#   ~\[Annee]\[Mois]\Semaine du [start] au [end] [Mois] #"
 Write-Host "#   Script creer par ROSKOVA                            #"
 Write-Host "# # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
 # Année à générer   
-$annee = 2022; 
+$annee = 2022;
 # Jour du premier dimanche du mois 
 $debutSA = (2,6,6,3,1,5,3,7,4,2,6,4); 
 # Nombre de dimanche dans le mois
-$nbSA=(5,4,4,4,5,4,5,4,4,5,4,4);
+#        J,F,M,A,M,J,J,A,S,O,N,D
+$nbSA = (5,4,4,4,5,4,5,4,4,5,4,4);
 # Nombre de jour en février        
 $nbFev = 28;
 read-host  "Appuyez sur n'importe ENTER pour lancer le script";
@@ -41,11 +42,9 @@ for ($j = 0; $j -le 11; $j++) {
         mkdir "$annee\$mois\Semaine du $debutS au $finS $mois";
       }if(($finS+7) -gt $nbJ){
         $finS -=$nbJ;
-        $debutS +=7
-      }else{
-        $debutS += 7;
       }
       $finS += 7;
+      $debutS +=7;
     }
 }
 read-host "Creation terminer";
