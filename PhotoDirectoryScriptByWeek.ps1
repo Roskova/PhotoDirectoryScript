@@ -3,18 +3,21 @@ Write-Host "# # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
 Write-Host "#   Script de Generation de dossier par semaine         #"
 Write-Host "#   Cree une arborescence par semaine et mois           #"
 Write-Host "#   ~\[Annee]\[Mois]\Semaine du [start] au [end] [Mois] #"
-Write-Host "#   Script creer par ROSKOVA                            #"
+Write-Host "#                                                       #"
+Write-Host "#   Script creer par ROSKOVA    20-04-2022              #"
 Write-Host "# # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
 read-host  "Appuyez sur ENTER pour lancer le script";
-# 
-# Nb de Dimanche par mois
-$nbSA = (5,4,4,4,5,4,5,4,4,5,4,4);
-# Année à générer et jour du premier dimanche de l'année
-$annee = 2022;
-$premierDimanche = 2;
-#Section librarie NE PAS ÉDITER
+$anneeA = read-host "Annee"
+# Date du premier dimanche de Janvier
+$premierDimancheA = read-host "Date du premier dimanche"
+
+#  Section librairie NE PAS ÉDITER
+#  Contient toute les fonctions et variable permettant le calcul du calendrier
 $NbJA=(31,$nbFev,31,30,31,30,31,31,30,31,30,31);$debutSA = @($premierDimanche,0,0,0,0,0,0,0,0,0,0,0);$moisA = ("Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
-if($annee%4 -eq 0 -and ($annee % 100 -ne 0 -or $annee % 400 -ne 0)){$nbFev=29;}else{$nbFev=28;}for($f = 1; $f -lt $debutSA.Count; $f++){$debutSA[$f]=$debutSA[$f-1]+($nbSA[$f-1]*7)-$NbJA[$f-1];}
+[int]$premierDimanche = $premierDimancheA;[int]$annee = $anneeA;if($annee%4 -eq 0 -and ($annee % 100 -ne 0 -or $annee % 400 -ne 0)){$nbFev=29;}else{$nbFev=28;}$nbSA = (0,0,0,0,0,0,0,0,0,0,0,0);
+for($t=0; $t -lt 12; $t++){if($t -eq 0){if($NbJA[$t]-28-($premierDimanche) -ge 0){$nbSA[$t]=5}else{$nbSA[$t]=4}$x=$premierDimanche}else{$x=$x+($nbSA[$t-1]*7)-$NbJA[$t-1];if($NbJA[$t]-28-($x) -ge 0){$nbSA[$t]=5}else{$nbSA[$t]=4}}}
+for($f=1; $f -lt $debutSA.Count; $f++){$debutSA[$f]=$debutSA[$f-1]+($nbSA[$f-1]*7)-$NbJA[$f-1];}
+
 #Section du script de génération
 mkdir "$annee";
 for ($j = 0; $j -le 11; $j++) {
