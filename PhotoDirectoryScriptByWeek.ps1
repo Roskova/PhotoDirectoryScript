@@ -4,7 +4,7 @@ Write-Host "#   Script de Generation de dossier par semaine         #"
 Write-Host "#   Cree une arborescence par semaine et mois           #"
 Write-Host "#   ~\[Annee]\[Mois]\Semaine du [start] au [end] [Mois] #"
 Write-Host "#                                                       #"
-Write-Host "#   Script creer par ROSKOVA    20-04-2022              #"
+Write-Host "#   Script creer par ROSKOVA 20-04-2022  Mod:05-05-2022 #"
 Write-Host "# # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
 $anneeA = read-host "Annee"
 $premierDimancheA = read-host "Date du premier dimanche"
@@ -32,4 +32,4 @@ for ($j = 0; $j -le 11; $j++) {
         if(($finS+7) -gt $nbJ){$finS -=$nbJ;} $finS += 7;$debutS +=7;}
     }
 }
-read-host "Creation terminer";
+read-host "Generation de l'annee $annee terminer";
