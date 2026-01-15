@@ -1,4 +1,8 @@
 #!/usr/local/bin/bash
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#   Auto Sorting script by week and year base on EXIF   #
+#   By ROSKOVA        V2.0         Created: 2025-10-18  #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # ============= CONFIGURATION =============
 # RECURSIVE: 1 = trier tous les sous-répertoires, 0 = seulement le dossier actuel
