@@ -21,7 +21,7 @@ CLEANUP_EMPTY_FOLDERS=1
 SOURCE_FOLDER_NAME="#"
 
 # DESTINATION_NAME: nom du disque de destination
-# "#" = défaut (ROY 866 Photographie 1/Photographie)
+# "#" = défaut (Mon Volume/Photographie)
 # "." = créer l'arborescence dans le dossier du script
 # "Mon Disque" = utiliser /Volumes/Mon Disque/Photographie
 DESTINATION_NAME="#"
@@ -44,7 +44,7 @@ fi
 
 # Déterminer la destination
 if [ "$DESTINATION_NAME" = "#" ]; then
-    DESTINATION_ROOT="/Volumes/ROY 866 Photographie 1/Photographie"
+    DESTINATION_ROOT="/Volumes/Mon Volume/Photographie"
 elif [ "$DESTINATION_NAME" = "." ]; then
     # Si destination = ".", trier dans le dossier source lui-même
     DESTINATION_ROOT="$SOURCE_FOLDER"
